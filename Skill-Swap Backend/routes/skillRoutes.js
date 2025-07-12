@@ -12,7 +12,7 @@ router.post('/postskill',verifyToken, async(req, res)=>{
         providedSkills,
         barterDateTime
       } = req.body;
-     
+     console.log(req.body)
       try{
         if( !type){
             return res.status(400).json({message:'Please fill all the fields 1'});

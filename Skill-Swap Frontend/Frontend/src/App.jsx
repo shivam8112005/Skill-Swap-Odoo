@@ -11,6 +11,7 @@ import ViewRequests from './Pages/ViewRequests'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './Pages/Layout'
 import LoginSignup from './Pages/LoginSignup'
+import SummarizeQuiz from './Pages/SummarizeQuiz'
 // import Auth from './Pages/Auth'
 // import ChatRoom from './components/ChatRoom';
 // import { Routes, Route } from 'react-router-dom';
@@ -47,6 +48,7 @@ function App() {
             <Route path='/send-request' element={<PostRequests />} />
             <Route path='/view-requests' element={<ViewRequests />} />
             <Route path='/login-signup' element={<LoginSignup />} />
+            <Route path='/text-quiz' element={<SummarizeQuiz />} />
           </Route>
           {/* <Route path='/' element={<Home/>}></Route>
         <Route path='/chat' element={<Chat/>}/>

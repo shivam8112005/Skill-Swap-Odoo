@@ -8,8 +8,13 @@ const router = express.Router();
 
 router.get('/getBarter', verifyToken, async (req, res) => {
     try {
-        const barter = await BarterRequest.find()
-        console.log(barter)
+        const barter = await SkillPost.find()
+        if (barter) {
+            return res.status(200).json({status: 200, barter: barter})
+        }
+        else {
+            return res.status(404).json({status: 404, barter: []})
+        }
     } catch (error) {
         console.log(error)        
     }
