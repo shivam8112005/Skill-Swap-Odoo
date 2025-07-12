@@ -42,29 +42,6 @@ Whether you're a **developer**, **musician**, **chef**, or **language tutor** �
 
 ---
 
-
-## 🚧 **Development Status**
-
-### ✅ **Currently Completed Functionality**
-
-- 🛠️ **API Implementations Done**
-  - Sending Barter Requests
-  - Fetching Barter Requests
-  - Creating & Updating User Profiles
-
-- 💡 **Frontend UI**
-  - Fully responsive design
-  - Google Authentication via **Firebase**
-  - Seamless API integration for:
-    - User Creation
-    - Profile Editing and Updates
-
-### 🧩 **Work in Progress**
-
-- 💬 Real-time **Chat System** – UI complete; final integration in progress  
-- 📹 **Video/Voice Calling** – Planned via WebRTC in upcoming versions
-
-
 ## 🧱 **Tech Stack Overview**
 
 ### 📦 Backend
@@ -179,11 +156,9 @@ npm run dev
 
 Built with 💙 by the Skill Swap Team.
 
-### ✉️ Contact
-- Email: `shivamshukla8112005@gmail.com`
+### ✉ Contact
+- Email: shivamshukla8112005@gmail.com
 - GitHub: [https://github.com/shivam8112005/Skill-Swap-Odoo]
-- Website: [skillswap.io] *(Coming Soon)*
-
-
+- Website: [skillswap.io] (Coming Soon)
 
 > If you liked this project, give it a ⭐ on GitHub!
