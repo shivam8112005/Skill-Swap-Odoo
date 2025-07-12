@@ -91,6 +91,7 @@ const LoginSignup = () => {
         setIsLoading(true)
 
         // Simulate API call
+        
         setTimeout(() => {
             setIsLoading(false)
             console.log(isLogin ? "Login successful" : "Signup successful", formData)
