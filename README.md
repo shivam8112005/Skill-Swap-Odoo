@@ -11,7 +11,7 @@ Whether you're a **developer**, **musician**, **chef**, or **language tutor** �
 
 ### 🔐 **Authentication & User Management**
 - Secure **JWT-based** login and registration
-- **Google OAuth** login for quick access
+- **Google OAuth** login for quick access using Firebase
 - Passwords stored securely using **bcrypt**
 - Cookie-token auth for protected routes
 
@@ -48,6 +48,7 @@ Whether you're a **developer**, **musician**, **chef**, or **language tutor** �
 - Node.js + Express
 - MongoDB + Mongoose
 - JWT for authentication
+- Firebase (Google Authentication)
 - bcrypt.js for password hashing
 - CORS, dotenv, cookie-parser
 
@@ -55,7 +56,6 @@ Whether you're a **developer**, **musician**, **chef**, or **language tutor** �
 - React.js (Vite-based setup)
 - React Router DOM
 - Axios for API calls
-- Firebase (chat or notifications)
 - Clean component structure
 
 ---
@@ -145,6 +145,7 @@ npm run dev
 ## 🔮 **Future Roadmap**
 
 - 📞 Video/voice calling with WebRTC
+- 📱 Chat with Socket.io
 - 📲 Launch Android/iOS apps
 - 🌎 Language & location-based matchmaking
 - ⭐ User rating and review system
@@ -159,6 +160,6 @@ Built with 💙 by the Skill Swap Team.
 ### ✉ Contact
 - Email: shivamshukla8112005@gmail.com
 - GitHub: [https://github.com/shivam8112005/Skill-Swap-Odoo]
-- Website: [skillswap.io] (Coming Soon)
+- Website: (Coming Soon)
 
 > If you liked this project, give it a ⭐ on GitHub!
