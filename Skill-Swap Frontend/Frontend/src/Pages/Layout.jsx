@@ -11,10 +11,9 @@ const Layout = () => {
     const navigate = useNavigate()
     const handleClick=()=>{
         // console.log(document.cookie," dsfhgweukfhierhngherkuhgijeriogjpoerkg;oerlgergherh");
-        console.log( document.cookie,' ejafbioewhfiohewiofhioewnfkl');
         
-        if(!document.cookie)navigate('/login-signup');
-            else navigate('/profile');
+        if(!document.cookie) navigate('/login-signup');
+        else navigate('/profile');
 
     }
     return (
