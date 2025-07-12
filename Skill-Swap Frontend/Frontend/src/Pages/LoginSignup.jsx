@@ -5,6 +5,7 @@ import { GoogleAuthProvider, signInWithPopup, getAuth } from 'firebase/auth'
 import { useNavigate } from "react-router-dom"
 import toast from 'react-hot-toast'
 import app  from '../firebase'
+import axios from 'axios'
 
 const LoginSignup = () => {
     const [isLogin, setIsLogin] = useState(true)
@@ -83,6 +84,43 @@ const LoginSignup = () => {
         setErrors(newErrors)
         return Object.keys(newErrors).length === 0
     }
+    async function registerUser() {
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/api/auth/register",
+      {
+         name: formData.username,    // your backend expects 'name'
+          email: formData.email,
+          password: formData.password
+      }
+    );
+    if(response.data.message==='User already exists'){
+        alert('User already exists')
+    }
+    console.log("Register successful:", response.data);
+    // You can use response.data.token, etc.
+  } catch (error) {
+    console.error("Error registering user:", error.response?.data || error.message);
+  }
+}
+
+ async function loginUser() {
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/api/auth/login",
+      {
+           
+          email: formData.email,
+          password: formData.password
+      }
+    );
+    return response;
+    console.log("Register successful:", response.data);
+    
+  } catch (error) {
+    console.error("Error registering user:", error.response?.data || error.message);
+  }
+}
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -91,6 +129,24 @@ const LoginSignup = () => {
         setIsLoading(true)
 
         // Simulate API call
+        if(!isLogin){
+            console.log("login");
+            
+           if( registerUser().status ==200 |201){
+            navigate('/')
+           }else{
+            console.log('Error in post request');
+            
+           }
+        }if(isLogin){
+            if( loginUser().status ==200 |201){
+            navigate('/')
+           }else{
+            console.log('Error in post request');
+            
+           }
+        }
+
         setTimeout(() => {
             setIsLoading(false)
             console.log(isLogin ? "Login successful" : "Signup successful", formData)
@@ -135,7 +191,7 @@ const LoginSignup = () => {
 
             const data = await res.json()
             console.log(data);
-            
+            localStorage.setItem('userId', data.user._id)
             // if (!data.success) {
             //     toast.error(data.message || 'Failed to authenticate with Google');
             //     return;
@@ -143,6 +199,7 @@ const LoginSignup = () => {
 
             if (data.status === 200 | 201) {
                 toast.success(data.message)
+
                 console.log("helooooooooooooooooooo");
                 
                 navigate('/')

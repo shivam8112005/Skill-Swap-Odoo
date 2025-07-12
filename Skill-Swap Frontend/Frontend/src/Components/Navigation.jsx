@@ -12,12 +12,14 @@ import {
   Users,
   ArrowRight,
   Star,
-  Clock,
-} from "lucide-react";
-import { Link } from "react-router-dom";
+  Clock
+} from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+
 const Navigation = (props) => {
   // const [activeTab, setActiveTab] = useState('home');
   // const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const navigate=useNavigate()
   const navigationItems = [
     { id: "home", label: "Home", icon: Users },
     { id: "view-requests", label: "View Open Barter Requests", icon: Eye },
@@ -39,8 +41,14 @@ const Navigation = (props) => {
     } else {
       props.setActiveTab(tabId);
     }
+    
     // props.setIsSidebarOpen(false);
   };
+   function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
 
   return (
     <>
@@ -60,8 +68,29 @@ const Navigation = (props) => {
         <ul className="space-y-2">
           {navigationItems.map((item) => {
             const Icon = item.icon;
+          
             return (
-              <Link to={item.id === "home" ? "/" : item.id}>
+
+                item.id==='profile' && !getCookie('token')?
+                
+                <Link to='/login-signup'>
+                <li key={item.id}>
+                  <button
+                    onClick={() => handleTabClick(item.id)}
+                    className={`w-full ${props.isSidebarOpen ? 'flex items-center p-3' : 'flex justify-center p-2'} 
+      rounded-lg transition-all duration-300
+      ${props.activeTab === item.id ? 'bg-blue-100 text-blue-800' : 'text-gray-600 hover:bg-gray-100'}
+    `}
+                  >
+                    <Icon className={`transition-all ${props.isSidebarOpen ? 'w-5 h-5' : 'w-7 h-7'}`} />
+                    {props.isSidebarOpen && <span className="ml-3 text-sm">{item.label}</span>}
+                  </button>
+                </li>
+              </Link>
+                
+                :
+              <Link to={item.id === 'home' ? '/' : item.id}>
+
                 <li key={item.id}>
                   <button
                     onClick={() => handleTabClick(item.id)}
