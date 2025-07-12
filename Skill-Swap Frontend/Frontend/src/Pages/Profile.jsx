@@ -98,7 +98,6 @@ const Profile = () => {
 
   const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
-  // Fetch user profile data
   useEffect(() => {
     fetchUserProfile()
   }, [])
@@ -120,7 +119,6 @@ const Profile = () => {
       }
 
       const data = await response.json()
-      console.log(data)
       setUserData(data.user)
       setEditData({
         skills: [...data.user.skills],

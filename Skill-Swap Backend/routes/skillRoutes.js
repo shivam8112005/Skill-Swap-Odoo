@@ -4,7 +4,6 @@ import verifyToken from '../middlewares/verifyToken.js';
 const router = express.Router();
 
 router.post('/postskill',verifyToken, async(req, res)=>{
-  // console.log('hello from skill post route');
     const {
         skillName,
         type,
