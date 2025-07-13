@@ -9,10 +9,15 @@ const Layout = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const navigate = useNavigate()
+     function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+}
     const handleClick=()=>{
         // console.log(document.cookie," dsfhgweukfhierhngherkuhgijeriogjpoerkg;oerlgergherh");
         
-        if(!document.cookie) navigate('/login-signup');
+        if(!getCookie('token')) navigate('/login-signup');
         else navigate('/profile');
 
     }

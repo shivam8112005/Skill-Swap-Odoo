@@ -115,7 +115,7 @@ const Home = () => {
               <span className="text-white text-sm font-medium">Welcome to SkillSwap</span>
             </div>
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
-              Welcome <span className="text-yellow-300">Shivam!</span>
+              Welcome <span className="text-yellow-300">To Skill Swap!</span>
             </h1>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto leading-relaxed">
               Connect with others to exchange skills and learn something new. Your next learning adventure is just a
