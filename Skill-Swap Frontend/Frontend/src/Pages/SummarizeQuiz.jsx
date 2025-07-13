@@ -678,4 +678,4 @@ The future of AI looks promising, with ongoing research in areas like quantum co
   )
 }
 
-export default SummarizeQuiz
+export default SummarizeQuiz
